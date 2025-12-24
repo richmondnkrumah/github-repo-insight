@@ -1,0 +1,21 @@
+{
+    "title": "Smart Repo Architect",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "repoUrl": {
+            "title": "GitHub Repository URL",
+            "type": "string",
+            "description": "The public repository to analyze (e.g. https://github.com/facebook/react).",
+            "editor": "textfield"
+        },
+        "geminiApiKey": {
+            "title": "Google Gemini API Key",
+            "type": "string",
+            "description": "Required for AI Analysis. Get a free key at aistudio.google.com",
+            "editor": "textfield",
+            "isSecret": true
+        }
+    },
+    "required": ["repoUrl", "geminiApiKey"]
+}

@@ -1,0 +1,12 @@
+{
+    "actorOutputSchemaVersion": 1,
+    "title": "Repo Analysis Results",
+    "type": "object",
+    "properties": {
+        "summary": {
+            "type": "string",
+            "title": "View Analysis",
+            "template": "{{links.apiDefaultDatasetUrl}}/items?format=json"
+        }
+    }
+}
