@@ -1,67 +1,44 @@
-## Empty TypeScript template
+# 🧠 Smart Repo Insight (AI Architect)
 
-<!-- This is an Apify template readme -->
+**Instantly understand any GitHub repository. Don't read code line-by-line, let AI explain the architecture to you.**
 
-Start a new [web scraping](https://apify.com/web-scraping) project quickly and easily in TypeScript (Node.js) with our empty project template. It provides a basic structure for the Actor with [Apify SDK](https://docs.apify.com/sdk/js/) and allows you to easily add your own functionality.
+---
 
-## Included features
+## 📖 What is Smart Repo Insight?
+Onboarding onto a new codebase is the hardest part of software engineering. **Smart Repo Insight** automates the discovery phase. It scans a public GitHub repository, bypasses the complexity of reading thousands of files, and uses **Google Gemini AI** to generate a high-level architectural summary.
 
-- **[Apify SDK](https://docs.apify.com/sdk/js/)** - a toolkit for building [Actors](https://apify.com/actors)
-- **[Crawlee](https://crawlee.dev/)** - web scraping and browser automation library
+It answers the questions:
+* "What is the tech stack?"
+* "Where is the business logic?"
+* "How do the components connect?"
 
-## How it works
+## ✨ What can this Actor do?
+* **Tech Stack Detection:** AI identifies frameworks, libraries, databases, and build tools automatically.
+* **Architecture Analysis:** Explains if the project is a Monorepo, MVC, Microservice, etc.
+* **Purpose Summarization:** Reads the README and Package.json to explain *why* the project exists.
+* **File Tree Mapping:** Extracts the full file structure (up to 100k files) using the Git Tree API.
+* **Complexity Scoring:** Rates the repository complexity on a scale of 1-10.
 
-Insert your own code between `await Actor.init()` and `await Actor.exit()`. If you would like to use the [Crawlee](https://crawlee.dev/) library simply uncomment its import `import { CheerioCrawler } from '@crawlee/cheerio';`.
+## 🚀 How to use
+1.  **Get a Key:** Get a free API key from [Google AI Studio](https://aistudio.google.com/). It takes 10 seconds.
+2.  **Input:** Paste the URL of any public GitHub repository (e.g., `https://github.com/facebook/react`) and your API Key.
+3.  **Run:** Click Start. In ~15 seconds, you will have a full briefing.
 
-## Resources
+## 💰 Pricing
+**Is this free?**
+Yes. This Actor is free to run on the Apify Platform.
 
-- [TypeScript vs. JavaScript: which to use for web scraping?](https://blog.apify.com/typescript-vs-javascript-crawler/)
-- [Node.js tutorials](https://docs.apify.com/academy/node-js) in Academy
-- [Video guide on getting scraped data using Apify API](https://www.youtube.com/watch?v=ViYYDHSBAKM)
-- [Integration with Airbyte](https://apify.com/integrations), Make, Zapier, Google Drive, and other apps
-- A short guide on how to build web scrapers using code templates:
+**Why is the API Key required?**
+To ensure the tool is **scalable** and **never crashes**, we require users to bring their own free Gemini Key. This guarantees that:
+1.  You never hit a "Rate Limit" caused by other users.
+2.  Your analysis is private to your specific run.
+3.  The tool remains free forever.
 
-[web scraper template](https://www.youtube.com/watch?v=u-i-Korzf8w)
+## 📥 Input Example
 
 
-## Getting started
-
-For complete information [see this article](https://docs.apify.com/platform/actors/development#build-actor-locally). To run the Actor use the following command:
-
-```bash
-apify run
-```
-
-## Deploy to Apify
-
-### Connect Git repository to Apify
-
-If you've created a Git repository for the project, you can easily connect to Apify:
-
-1. Go to [Actor creation page](https://console.apify.com/actors/new)
-2. Click on **Link Git Repository** button
-
-### Push project on your local machine to Apify
-
-You can also deploy the project on your local machine to Apify without the need for the Git repository.
-
-1. Log in to Apify. You will need to provide your [Apify API Token](https://console.apify.com/account/integrations) to complete this action.
-
-    ```bash
-    apify login
-    ```
-
-2. Deploy your Actor. This command will deploy and build the Actor on the Apify Platform. You can find your newly created Actor under [Actors -> My Actors](https://console.apify.com/actors?tab=my).
-
-    ```bash
-    apify push
-    ```
-
-## Documentation reference
-
-To learn more about Apify and Actors, take a look at the following resources:
-
-- [Apify SDK for JavaScript documentation](https://docs.apify.com/sdk/js)
-- [Apify SDK for Python documentation](https://docs.apify.com/sdk/python)
-- [Apify Platform documentation](https://docs.apify.com/platform)
-- [Join our developer community on Discord](https://discord.com/invite/jyEM2PRvMU)
+```json
+{
+  "repoUrl": "[https://github.com/facebook/react](https://github.com/facebook/react)",
+  "geminiApiKey": "AIzaSy..."
+}
