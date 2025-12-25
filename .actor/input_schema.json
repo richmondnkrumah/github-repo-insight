@@ -1,21 +1,18 @@
 {
-    "title": "Smart Repo Architect",
-    "type": "object",
-    "schemaVersion": 1,
+    "actorOutputSchemaVersion": 1,
+    "title": "GitHub Repo Insight Output",
     "properties": {
-        "repoUrl": {
-            "title": "GitHub Repository URL",
+        "analysis_view": {
             "type": "string",
-            "description": "The public repository to analyze (e.g. https://github.com/facebook/react).",
-            "editor": "textfield"
+            "title": "Analysis Overview 🧠",
+            "description": "View the AI-generated insights, tech stack, and architecture summary.",
+            "template": "{{links.apiDefaultDatasetUrl}}/items?format=json&fields=repo,stars,purpose,architecture_summary,tech_stack,complexity_score"
         },
-        "geminiApiKey": {
-            "title": "Google Gemini API Key",
+        "full_data": {
             "type": "string",
-            "description": "Required for AI Analysis. Get a free key at aistudio.google.com",
-            "editor": "textfield",
-            "isSecret": true
+            "title": "Full Dataset (JSON) 📦",
+            "description": "Download the complete data including the full file tree and raw Readme.",
+            "template": "{{links.apiDefaultDatasetUrl}}/items?format=json"
         }
-    },
-    "required": ["repoUrl", "geminiApiKey"]
+    }
 }
