@@ -1,0 +1,91 @@
+{
+    "actorSpecification": 1,
+    "fields": {
+        "type": "object",
+        "properties": {
+            "repo": {
+                "type": "string",
+                "description": "The full name of the repository (owner/repo)."
+            },
+            "stars": {
+                "type": "integer",
+                "description": "Number of stars on GitHub."
+            },
+            "purpose": {
+                "type": "string",
+                "description": "AI-generated summary of what the project does."
+            },
+            "architecture_summary": {
+                "type": "string",
+                "description": "AI explanation of the project structure."
+            },
+            "tech_stack": {
+                "type": "string",
+                "description": "List of key technologies used."
+            },
+            "complexity_score": {
+                "type": "integer",
+                "description": "AI rating of code complexity (1-10)."
+            },
+            "file_tree": {
+                "type": "array",
+                "description": "List of all file paths in the repository.",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "description": {
+                "type": "string",
+                "description": "The original GitHub description."
+            },
+            "languages": {
+                "type": "object",
+                "description": "Breakdown of programming languages used."
+            }
+        }
+    },
+    "views": {
+        "overview": {
+            "title": "Overview 📊",
+            "transformation": {
+                "fields": [
+                    "repo",
+                    "stars",
+                    "complexity_score",
+                    "tech_stack",
+                    "purpose",
+                    "architecture_summary"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "repo": {
+                        "label": "Repository",
+                        "format": "text"
+                    },
+                    "stars": {
+                        "label": "⭐ Stars",
+                        "format": "number"
+                    },
+                    "complexity_score": {
+                        "label": "🧠 Complexity (1-10)",
+                        "format": "number"
+                    },
+                    "tech_stack": {
+                        "label": "🛠️ Tech Stack",
+                        "format": "text"
+                    },
+                    "purpose": {
+                        "label": "📝 Purpose",
+                        "format": "text"
+                    },
+                    "architecture_summary": {
+                        "label": "🏗️ Architecture",
+                        "format": "text"
+                    }
+                }
+            }
+        }
+    }
+}
